@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="EducationContentService.Core/EducationContentService.Core.csproj" />
+  <Project Path="EducationContentService.Domain/EducationContentService.Domain.csproj" Id="29422a34-e443-490f-b4e3-b264f99eff93" />
+  <Project Path="EducationContentService.Infrastructure.Postgres/EducationContentService.Infrastructure.Postgres.csproj" Id="bebd9b2a-1268-4698-8982-c9ae3f5e8dac" />
+</Solution>
