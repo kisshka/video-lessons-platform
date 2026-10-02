@@ -1,13 +1,34 @@
+using Serilog;
 using EducationContentService.Core.Configuration;
 using EducationContentService.Core.EndpointSettings;
 using Microsoft.OpenApi.Models;
+using System.Globalization;
 
-var builder = WebApplication.CreateBuilder(args);
+Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Information()
+    .WriteTo.Console(formatProvider: CultureInfo.InvariantCulture)
+    .CreateBootstrapLogger();
 
-builder.Services.AddConfiguration(builder.Configuration);
+try
+{
+    Log.Information("Starting up");
 
-var app = builder.Build();
+    var builder = WebApplication.CreateBuilder(args);
 
-app.ConfigureApp();
+    builder.Services.AddConfiguration(builder.Configuration);
 
-app.Run();
+    var app = builder.Build();
+
+    app.ConfigureApp();
+
+    app.Run();
+
+}
+catch (Exception ex)
+{
+    Log.Fatal(ex, "Application start-up failed");
+}
+finally
+{
+    Log.CloseAndFlush();
+}

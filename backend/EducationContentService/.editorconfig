@@ -114,3 +114,6 @@ dotnet_diagnostic.CA1515.severity = silent
 
 # CA1062: Проверить аргументы или открытые методы
 dotnet_diagnostic.CA1062.severity = suggestion
+
+# CA1031: Не перехватывать исключения общих типов
+dotnet_diagnostic.CA1031.severity = silent
