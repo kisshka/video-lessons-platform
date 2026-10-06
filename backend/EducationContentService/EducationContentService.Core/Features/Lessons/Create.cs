@@ -1,8 +1,10 @@
-﻿using EducationContentService.Core.EndpointSettings;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Routing;
+using Microsoft.Extensions.Logging;
 
 namespace EducationContentService.Core.Features.Lessons
 {
-    internal sealed class CreateEndpoint : IEndpoint
+    public sealed class CreateEndpoint : IEndpoint
     {
 
         public void MapEndpoint(IEndpointRouteBuilder app)
@@ -14,7 +16,7 @@ namespace EducationContentService.Core.Features.Lessons
         }
     }
 
-    internal sealed class CreateHandler
+    public sealed class CreateHandler
     {
         private readonly ILogger<CreateHandler> _logger;
 

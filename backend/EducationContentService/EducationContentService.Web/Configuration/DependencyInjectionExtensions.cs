@@ -1,10 +1,10 @@
-﻿using EducationContentService.Core.EndpointSettings;
-using EducationContentService.Core.Features.Lessons;
+﻿using EducationContentService.Core.Features.Lessons;
+using EducationContentService.Web.EndpointSettings;
 using Microsoft.OpenApi.Models;
 using Serilog;
 using Serilog.Exceptions;
 
-namespace EducationContentService.Core.Configuration
+namespace EducationContentService.Web.Configuration
 {
     internal static class DependencyInjectionExtensions
     {

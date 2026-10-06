@@ -1,4 +1,13 @@
 services:
+    lesson-service:
+        container_name: education-content-service
+        build:
+            context: ./backend/EducationContentService
+            dockerfile: Dockerfile
+        ports:
+            - "9001:9001" 
+        restart: always
+
     seq:
         container_name: seq
         image: datalust/seq:latest

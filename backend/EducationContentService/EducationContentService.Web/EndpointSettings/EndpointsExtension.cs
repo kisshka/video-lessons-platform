@@ -2,7 +2,7 @@
 using Microsoft.VisualBasic;
 using System.Reflection;
 
-namespace EducationContentService.Core.EndpointSettings
+namespace EducationContentService.Web.EndpointSettings
 {
     internal static class EndpointsExtension
     {

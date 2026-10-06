@@ -1,4 +1,4 @@
-﻿namespace EducationContentService.Core.EndpointSettings
+﻿namespace EducationContentService.Web.EndpointSettings
 {
     internal interface IEndpoint
     {

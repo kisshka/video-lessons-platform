@@ -1,8 +1,8 @@
 using Serilog;
-using EducationContentService.Core.Configuration;
 using EducationContentService.Core.EndpointSettings;
 using Microsoft.OpenApi.Models;
 using System.Globalization;
+using EducationContentService.Web.Configuration;
 
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Information()
