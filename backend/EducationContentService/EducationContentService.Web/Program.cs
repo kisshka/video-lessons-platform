@@ -24,7 +24,7 @@ try
 
     var app = builder.Build();
 
-    app.ConfigureApp();
+    app.Configure();
 
     app.Run();
 
