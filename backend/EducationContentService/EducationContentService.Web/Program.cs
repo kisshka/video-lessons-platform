@@ -1,5 +1,4 @@
 using Serilog;
-using EducationContentService.Core.EndpointSettings;
 using Microsoft.OpenApi.Models;
 using System.Globalization;
 using EducationContentService.Web.Configuration;
@@ -14,6 +13,12 @@ try
     Log.Information("Starting up");
 
     var builder = WebApplication.CreateBuilder(args);
+
+    string environment = builder.Environment.EnvironmentName;
+
+    builder.Configuration.AddJsonFile($"appsettings.{environment}.json", optional: true, reloadOnChange: true)
+                         .AddEnvironmentVariables();
+
 
     builder.Services.AddConfiguration(builder.Configuration);
 

@@ -2,10 +2,13 @@ services:
     lesson-service:
         container_name: education-content-service
         build:
-            context: ./backend/EducationContentService
-            dockerfile: Dockerfile
+          context: ./backend/EducationContentService
+          dockerfile: EducationContentService.Web/Dockerfile
         ports:
-            - "9001:9001" 
+            - "9001:9001"
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Docker
+            - ASPNETCORE_URLS=http://+:9001
         restart: always
 
     seq:

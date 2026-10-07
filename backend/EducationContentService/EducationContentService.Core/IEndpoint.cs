@@ -2,7 +2,7 @@
 
 namespace EducationContentService.Core
 {
-    internal interface IEndpoint
+    public interface IEndpoint
     {
         public void MapEndpoint(IEndpointRouteBuilder app);
     }

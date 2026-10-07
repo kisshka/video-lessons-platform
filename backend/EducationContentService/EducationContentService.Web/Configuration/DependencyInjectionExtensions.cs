@@ -1,4 +1,5 @@
-﻿using EducationContentService.Core.Features.Lessons;
+﻿using EducationContentService.Core;
+using EducationContentService.Core.Features.Lessons;
 using EducationContentService.Web.EndpointSettings;
 using Microsoft.OpenApi.Models;
 using Serilog;
@@ -15,7 +16,7 @@ namespace EducationContentService.Web.Configuration
             return services
                 .AddSerilogLogging(configuration)
                 .AddOpenApiSpec()
-                .AddEndpoints(typeof(Program).Assembly);
+                .AddEndpoints(typeof(IEndpoint).Assembly);
         }
 
         private static IServiceCollection AddOpenApiSpec(this IServiceCollection services)

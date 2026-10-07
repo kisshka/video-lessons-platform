@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection.Extensions;
+using EducationContentService.Core;
 using Microsoft.VisualBasic;
 using System.Reflection;
 
