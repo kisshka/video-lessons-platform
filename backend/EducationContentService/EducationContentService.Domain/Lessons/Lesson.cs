@@ -1,0 +1,35 @@
+﻿using CSharpFunctionalExtensions;
+using EducationContentService.Domain.ValueObjects;
+
+namespace EducationContentService.Domain.Lessons
+{
+    public sealed class Lesson
+    {
+        Lesson()
+        {
+        }
+
+        public Lesson(Guid? id, Title title, Description description)
+        {
+            Id = id ?? Guid.NewGuid();
+            Title = title;
+            Description = description;
+            CreatedAt = DateTime.UtcNow;
+            UpdatedAt = CreatedAt;
+            DeletedAt = null;
+        }
+
+        public Guid Id { get;}
+
+        public Title Title { get; private set; } = null!;
+
+        public Description Description { get; private set; } = null!;
+
+        public DateTime CreatedAt { get; private set; }
+
+        public DateTime UpdatedAt { get; private set; }
+
+        public DateTime? DeletedAt { get; private set; }
+    }
+
+}
