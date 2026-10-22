@@ -1,4 +1,5 @@
 ﻿using CSharpFunctionalExtensions;
+using EducationContentService.Domain.Share;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,16 +14,16 @@ namespace EducationContentService.Domain.ValueObjects
 
         public string Value { get; }
 
-        public Title(string value)
+        private Title(string value)
         {
             Value = value;
         }
 
-        public static Result<Title, string> Create(string value)
+        public static Result<Title, ErrorBody> Create(string value)
         {
             if (string.IsNullOrWhiteSpace(value) || value.Length > MAX_LENGTH)
             {
-                return "неверный формат заголовка";
+                return GeneralErrors.InvalidValue(nameof(Title), nameof(Value));
             }
 
             return new Title(value);

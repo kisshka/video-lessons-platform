@@ -5,10 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EducationContentService.Domain.Module
+namespace EducationContentService.Domain.Modules
 {
     public sealed class CourseModule
     {
+        private CourseModule()
+        {
+            
+        }
+
         public CourseModule(Guid? id, Title title, Description description)
         {
             Id = id ?? Guid.NewGuid();
@@ -21,9 +26,9 @@ namespace EducationContentService.Domain.Module
 
         public Guid Id { get; }
 
-        public Title Title { get; private set; }
+        public Title Title { get; private set; } = null!;
 
-        public Description Description { get; private set; }
+        public Description Description { get; private set; } = null!;
 
         public DateTime CreatedAt { get; private set; }
 
